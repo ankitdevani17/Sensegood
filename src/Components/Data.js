@@ -1,12 +1,9 @@
-const Data = [
-    {
-        fname:"Ankit",
-        lname:"raj",
-    },
-    {
-        fname:"Ank",
-        lname:"Devani",
-    }
-]
+import React from 'react'
 
-export default Data;
+const Data = () => {
+  return (
+    working
+  )
+}
+
+export default Data
