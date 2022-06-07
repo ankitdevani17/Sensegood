@@ -10,7 +10,7 @@ useEffect(() => {
         console.log(err);
     })
     console.log(res);
-    setid(res.data);
+    //setid(res.data);
     }
     getData();
 })
