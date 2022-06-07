@@ -5,7 +5,8 @@ const Products = () => {
   const [num,setnum ] =useState();
   useEffect(() => {
     async function getData() {
-    const res = await axios.get(`http://sgtest.tk/api/products/get_list/`);
+    const res = await axios.get(`http://sgtest.tk/api/products/get_list/`,
+    {mode:'cors'},{ withCredentials: true });
     const data = JSON.stringify(res.data);
     console.log(data);
     setnum(res.data[0].name);
