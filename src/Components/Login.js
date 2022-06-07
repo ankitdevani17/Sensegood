@@ -35,7 +35,7 @@ const Login = () => {
   }
   useEffect(() =>{
     if(!localStorage.getItem('detail')){
-      navigate('/log') // navigate back to login if token is not found or not there in local storage
+      //navigate('/log') // navigate back to login if token is not found or not there in local storage
     }
     }, [])
     return (
