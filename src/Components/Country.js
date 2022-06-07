@@ -5,7 +5,7 @@ const [num,setnum ] =useState("IN");
 const [id,setid] =useState();
 useEffect(() => {
     async function getData() {
-    const res = await axios.get(`http://sgtest.tk/api/products/get_checkout_list/${num}/`,{mode:'cors'},{ withCredentials: true }
+    const res = await axios.get(`http://localhost:3000/api/products/get_checkout_list/${num}/`,{mode:'cors'},{ withCredentials: true }
     ).catch(err =>{
         console.log(err);
     })
