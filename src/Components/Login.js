@@ -16,7 +16,7 @@ const Login = () => {
   }
   const handleApi = () => {
     // sending login(username) and password to server  
-    axios.post("http://localhost:3000/api/accounts/login/", {
+    axios.post("/api/accounts/login/", {
       login: username,
       password: password
     }, {mode:'cors'},{ withCredentials: true }).then(res => {

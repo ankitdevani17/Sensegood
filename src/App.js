@@ -7,7 +7,10 @@ import Cart from './Components/Cart';
 import Country from './Components/Country';
 import Logout from './Components/Logout';
 import { Route,Routes } from "react-router-dom";
+import axios from 'axios';
 const App = () => {
+  axios.defaults.xsrfHeaderName = "X-CSRFToken"
+  axios.defaults.xsrfCookieName = 'csrftoken'
 return(
     <Routes>
     <Route  path="/login" element ={<Login/>}/>

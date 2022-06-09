@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 const Logout = () => {
   const handleLogout = () => {
     // sending login(username) and password to server  
-    axios.post("http://sgtest.tk/api/accounts/logout/", {
+    axios.post("/api/accounts/logout/", {
       "revoke_token": true
     }, {mode:'cors'},{ withCredentials: true }).then(res => {
     console.log(res.data);
