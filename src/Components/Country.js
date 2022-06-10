@@ -16,26 +16,41 @@ useEffect(() => {
     setdata(res.data);
       }
     getData();
+    handlePrice();
 },[])
-const Increment = () =>{
+const handlePrice = () =>{
+  
+}
+const Increment = (key) =>{
+  var ind = fdata.indexOf(key);
+  fdata[ind].quantity = fdata[ind].quantity + 1;
 if (Quant < 99){
 SetQuant(Quant+1);}
 }
-const Decrement = () =>{
+const Decrement = (key) =>{
+  var ind = fdata.indexOf(key);
+  fdata[ind].quantity = fdata[ind].quantity - 1;
   if (Quant > 0){
     SetQuant(Quant-1);}
 }
+const Multiply = (key) =>{
+  var ind = fdata.indexOf(key);
+  var amount = fdata[ind].price.amount * fdata[ind].quantity;
+  return amount;
+  }
 var viewproducts ="";
-viewproducts = (fdata || []).map((item) => {
-    return(
-      <>
-            <div>PRODUCT NAME : {item.name}  </div>
-            <div>PRODUCT PRICE : {item.price.amount}  </div>
-            
-            {Quant}<button onClick={Increment}> Add </button>
-            <button onClick={Decrement}> Subtract </button>
+viewproducts = (fdata || []).map((key,index) => {
+    return( 
 
-            <div>FINAL AMOUNT FOR PROUCT :   </div>
+      <>
+
+            <div>PRODUCT NAME : {key.name}  </div>
+            <div>PRODUCT PRICE : {key.price.amount}  </div>
+            
+            {key.quantity}<button onClick={()=>Increment(key)}> Add </button>
+            <button onClick={()=>Decrement(key)}> Subtract </button>
+
+            <div>FINAL AMOUNT FOR PROUCT : {Multiply(key)} </div>
  </>
     )
 })
