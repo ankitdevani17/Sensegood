@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
+var totalamount = 0; //delared globally to access amoung all functions
 const Country = () => {
 const [country,setcountry ] =useState("IN");
 const [fdata,setdata] =useState();
@@ -16,14 +17,12 @@ useEffect(() => {
     setdata(res.data);
       }
     getData();
-    handlePrice();
+
 },[])
-const handlePrice = () =>{
-  
-}
 const Increment = (key) =>{
   var ind = fdata.indexOf(key);
   fdata[ind].quantity = fdata[ind].quantity + 1;
+  totalamount = totalamount + fdata[ind].price.amount;
 if (Quant < 99){
 SetQuant(Quant+1);}
 }
@@ -38,6 +37,8 @@ const Multiply = (key) =>{
   var amount = fdata[ind].price.amount * fdata[ind].quantity;
   return amount;
   }
+
+
 var viewproducts ="";
 viewproducts = (fdata || []).map((key,index) => {
     return( 
@@ -51,9 +52,11 @@ viewproducts = (fdata || []).map((key,index) => {
             <button onClick={()=>Decrement(key)}> Subtract </button>
 
             <div>FINAL AMOUNT FOR PROUCT : {Multiply(key)} </div>
+            
  </>
     )
 })
+
   return (
       <>
 
@@ -66,6 +69,8 @@ viewproducts = (fdata || []).map((key,index) => {
     </select>
 
     {viewproducts}
+    {totalamount}
+   
 
     </>
   )
