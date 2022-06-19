@@ -6,6 +6,8 @@ import Products from './Components/Products';
 import Cart from './Components/Cart';
 import Country from './Components/Country';
 import Logout from './Components/Logout';
+import Billing from './Components/Billing';
+import Shipping from './Components/Shipping';
 import { Route,Routes } from "react-router-dom";
 import axios from 'axios';
 const App = () => {
@@ -19,6 +21,8 @@ return(
     <Route  exact path="/Products" element ={<Products/>}></Route>
     <Route  path="/Country" element ={<Country/>}></Route>
     <Route  path="/Logout" element ={<Logout/>}></Route>
+    <Route path ='/Billing' element ={<Billing/>}></Route>
+    <Route path ='/Shipping' element ={<Shipping/>}></Route>
   </Routes>
 
 )}
