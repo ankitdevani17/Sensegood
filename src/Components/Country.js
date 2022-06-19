@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
+import { useStateIfMounted } from 'use-state-if-mounted';
 var totalamount = 0; //delared globally to access amoung all functions
 const Country = () => {
 const [country,setcountry ] =useState("IN");
@@ -17,8 +18,16 @@ useEffect(() => {
     setdata(res.data);
       }
     getData();
+    initialPrice();
 
 },[])
+  function initialPrice () {
+  for (let i = 0; i < fdata.length; i++) {
+  totalamount = totalamount + fdata[i].quantity * fdata[i].price.amount;
+  }
+  return totalamount;
+}
+
 const Increment = (key) =>{
   var ind = fdata.indexOf(key);
   fdata[ind].quantity = fdata[ind].quantity + 1;
@@ -29,14 +38,10 @@ SetQuant(Quant+1);}
 const Decrement = (key) =>{
   var ind = fdata.indexOf(key);
   fdata[ind].quantity = fdata[ind].quantity - 1;
+  totalamount = totalamount - fdata[ind].price.amount;
   if (Quant > 0){
     SetQuant(Quant-1);}
 }
-const Multiply = (key) =>{
-  var ind = fdata.indexOf(key);
-  var amount = fdata[ind].price.amount * fdata[ind].quantity;
-  return amount;
-  }
 
 
 var viewproducts ="";
@@ -50,8 +55,6 @@ viewproducts = (fdata || []).map((key,index) => {
             
             {key.quantity}<button onClick={()=>Increment(key)}> Add </button>
             <button onClick={()=>Decrement(key)}> Subtract </button>
-
-            <div>FINAL AMOUNT FOR PROUCT : {Multiply(key)} </div>
             
  </>
     )
