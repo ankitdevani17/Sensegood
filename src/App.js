@@ -8,6 +8,7 @@ import Country from './Components/Country';
 import Logout from './Components/Logout';
 import Billing from './Components/Billing';
 import Shipping from './Components/Shipping';
+import Checkout from './Components/Checkout';
 import { Route,Routes } from "react-router-dom";
 import axios from 'axios';
 const App = () => {
@@ -23,6 +24,7 @@ return(
     <Route  path="/Logout" element ={<Logout/>}></Route>
     <Route path ='/Billing' element ={<Billing/>}></Route>
     <Route path ='/Shipping' element ={<Shipping/>}></Route>
+    <Route path ='/Checkout' element ={<Checkout/>}></Route>
   </Routes>
 
 )}
