@@ -10,15 +10,18 @@ const [Quant,SetQuant]
 useEffect(() => {
     async function getData() {
     const res = await axios.get(`/api/products/get_checkout_list/${country}/`,{mode:'cors'},{ withCredentials: true }
-    ).catch(err =>{
-        console.log(err);
-    })
+    );
     //const serverdata = JSON.stringify(res);   
     console.log(res);
     setdata(res.data);
       }
-    getData();
+  let a =  getData();
+  a.then(()=>{
     initialPrice();
+      console.log("promise resolved");
+  })
+  
+    
 
 },[])
   function initialPrice () {
