@@ -7,6 +7,7 @@ const [country,setcountry ] =useState("IN");
 const [fdata,setdata] =useState();
 const [Quant,SetQuant]
  = useState(0);
+ const [totalamount,settotalamount] = useState("")
 useEffect(() => {
     async function getData() {
     const res = await axios.get(`/api/products/get_checkout_list/${country}/`,{mode:'cors'},{ withCredentials: true }
@@ -17,18 +18,18 @@ useEffect(() => {
       }
   let a =  getData();
   a.then(()=>{
-    initialPrice();
+    initialPrice(fdata);
       console.log("promise resolved");
   })
-  
-    
 
 },[])
-  function initialPrice () {
+  function initialPrice (fdata) {
+    console.log("kei bhi")
+  var temp = 0;
   for (let i = 0; i < fdata.length; i++) {
-  totalamount = totalamount + fdata[i].quantity * fdata[i].price.amount;
+   temp = temp + fdata[i].quantity * fdata[i].price.amount;
   }
-  return totalamount;
+  settotalamount(temp);
 }
 
 const Increment = (key) =>{
@@ -74,8 +75,8 @@ viewproducts = (fdata || []).map((key,index) => {
         <option value="US">US</option>
     </select>
 
-    {viewproducts}
-    {totalamount}
+    {viewproducts} <br/>
+    Total amount : {totalamount}
    
 
     </>

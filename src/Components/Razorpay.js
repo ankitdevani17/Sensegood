@@ -36,7 +36,7 @@ function Razorpay() {
         const data = JSON.stringify(res.data);
         console.log(data);
         setLoading(true);
-        
+
         const options = {
           key: key,
           amount: amount.toString(),
@@ -49,7 +49,7 @@ function Razorpay() {
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_order_id: response.razorpay_order_id,
               razorpay_signature: response.razorpay_signature,
-              order_id : order_id
+              order_id : order_id //order id of notes
             });
             alert(result.data.msg);
             fetchOrders();
@@ -66,7 +66,6 @@ function Razorpay() {
     };
     document.body.RazorpayendChild(script);
   }
-
   return (
     <div className="Razorpay">
       <h1> Razorpay Example: Node & React</h1>
