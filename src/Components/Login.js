@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios'; 
 import {useNavigate} from "react-router-dom";
+import "./Login.css"
 
 
 const Login = () => {
@@ -39,11 +40,48 @@ const Login = () => {
     }
     }, [])
     return (
-      <div>
-        username : <input value = {username} type ="text" onChange={handleusername}/> <br/>
-        Password : <input value ={password} type ="password" onChange={handlePassword}/><br/>
-  <button onClick = {handleApi}>Login</button>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+      </head>
+  <body>
+    <div class="container">
+      <div class="top-header">
+        <h3>Welcome back</h3>
+        <p>Enter your credentials to access your account</p>
       </div>
+      <form action="">
+        <div class="user">
+          <i class="bx bxs-user-circle"></i>
+          <input value = {username} type ="text" onChange={handleusername} placeholder="Enter your username" />
+        </div>
+        <div class="pass">
+          <i class="bx bxs-lock-alt"></i>
+          <input value ={password} type ="password" onChange={handlePassword} placeholder="Enter your password" />
+        </div>
+      </form>
+      <div class="btn">
+        <button onClick = {handleApi}>Sign in</button>
+      </div>
+    </div>
+    <p class="last">Forgot your password? <a href="#"> Reset Password </a></p>
+    <script src="/app.js"></script>
+  </body>
+</html>
+
     )
 }
 export default Login;

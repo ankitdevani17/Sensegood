@@ -1,4 +1,3 @@
-
 import React from "react"
 import { useSearchParams } from "react-router-dom"
 import axios from 'axios'; 
@@ -8,7 +7,7 @@ const VerifyReg = () => {
   let timestamp = searchParams.get("timestamp")
   let signature= searchParams.get("signature")
 
-axios.post('http://sgtest.tk/api/accounts/verify-registration/', {
+axios.post('/api/accounts/verify-registration/', {
   user_id:user_id,
 	timestamp:timestamp,
 	signature:signature

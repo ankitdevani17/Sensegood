@@ -1,8 +1,10 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios'; 
 import {useNavigate} from "react-router-dom";
+import "./Signup.css"
 
 const Signup = () => {
+  const navigate = useNavigate();
     const [username, setusername]= useState("");
     const [password, setPassword]= useState("");
     const [cpassword, setCPassword]= useState("");
@@ -22,7 +24,7 @@ const Signup = () => {
       }
     const handleApi = () => {
       // sending login(username) and password to server  
-      axios.post("http://sgtest.tk/api/accounts/register/", {
+      axios.post("/api/accounts/register/", {
         username: username,
         password: password,
         email: email,
@@ -33,7 +35,7 @@ const Signup = () => {
       //alert("success");
      // mode cors is for enabling cross-origin requests in frontend 
      localStorage.setItem("user-info",res.data.detail);
-     //navigate("/data"); // page to be routed to after successful login
+     navigate("/Aftersignup"); // page to be routed to after successful login
     })
      
       .catch(err=>{
@@ -43,13 +45,56 @@ const Signup = () => {
   
     }
   return (
-    <div>   Signup 
-    username : <input value = {username} type ="text" onChange={handleusername}/> <br/>
-    email : <input value ={email} type ="text" onChange={handleemail}/><br/>
-    password : <input value ={password} type ="password" onChange={handlepassword}/><br/>
-    confirm password : <input value ={cpassword} type ="password" onChange={handlecpassword}/><br/>
-<button onClick = {handleApi}>Login</button>
-  </div>
+    <>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+          href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+          rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+          rel="stylesheet"
+        />
+          </head>
+      <body>
+        <div class="container">
+          <div class="top-header">
+            <h3>New user?</h3>
+            <p>Enter your details to dive in</p>
+          </div>
+          <form action="">
+            <div class="user">
+              <i class="bx bxs-user-circle"></i>
+              <input value = {username} type ="text" onChange={handleusername} placeholder="Enter your username" />
+            </div>
+            <div class="pass">
+            <i class='bx bx-envelope'></i>
+              <input value ={email} type ="text" onChange={handleemail} placeholder="Enter your email" />
+            </div>
+            <div class="pass">
+              <i class="bx bxs-lock-alt"></i>
+              <input value ={password} type ="password" onChange={handlepassword} placeholder="Enter your password" />
+            </div>
+            <div class="pass">
+              <i class="bx bxs-lock-alt"></i>
+              <input value ={cpassword} type ="password" onChange={handlecpassword} placeholder="Confirm Password" />
+            </div>
+          </form>
+          <div class="btn">
+            <button  onClick = {handleApi}>Sign up</button>
+          </div>
+        </div>
+        <script src="/app.js"></script>
+      </body>
+    </html>
+    </>
   )
 }
 

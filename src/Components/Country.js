@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
 import { useStateIfMounted } from 'use-state-if-mounted';
-var temp =0;//delared globally to access amoung all functions
+//delared globally to access amoung all functions
 const Country = () => {
 const [country,setcountry ] =useState("IN");
-const [fdata,setdata] =useState("");
+const [fdata,setdata] =useState([]);
 const [Quant,SetQuant]
  = useState(0);
  const [totalamount,settotalamount] = useState()
@@ -15,51 +15,58 @@ useEffect(() => {
     //const serverdata = JSON.stringify(res);   
     console.log(res);
     setdata(res.data);
+    initialPrice(res.data);
     console.log("data set")
       }
   let a =  getData();
-  a.then(()=>{
-    initialPrice(fdata);
-      console.log("promise resolved");
-  })
 
 },[])
+
 function initialPrice (fdata) {
 console.log("kei bhi")
-var temp =0;
+var temp=0;
 for (var i = 0; i < fdata.length; i++) {
 console.log("changing temp")
-temp = temp + fdata[i].quantity * fdata[i].price.amount;
-
+ temp = temp + fdata[i].quantity * fdata[i].price.amount;
   }
   console.log("total amount printing")
   settotalamount(temp);
 }
+useEffect(()=>{
+  console.log(totalamount,"use");
+},[totalamount])
 
 const Increment = (key) =>{
-  
+  var temp = 0;
   var ind = fdata.indexOf(key);
-  fdata[ind].quantity = fdata[ind].quantity + 1;
-  console.log(fdata[ind].id)
+  console.log(fdata[ind].quantity,"hi" )
+  var temp3 = fdata[ind]
   axios.put(`/api/cart/item/${fdata[ind].id}/`, {
-   quantity: fdata[ind].quantity 
-  }, {mode:'cors'},{ withCredentials: true }).then(res => {
-  console.log(res.data);
-  //alert("success");
- // mode cors is for enabling cross-origin requests in frontend 
-})
+    quantity: fdata[ind].quantity+1
  
-  .catch(err=>{
-    console.log(err);
-   // alert("Invalid Credentials");
-  })
-  temp =temp + fdata[ind].price.amount;
- settotalamount(temp);
+   }, {mode:'cors'},{ withCredentials: true }).then(res => {
+   console.log(res.data);
+   //alert("success");
+  // mode cors is for enabling cross-origin requests in frontend 
+ })
+  
+   .catch(err=>{
+     console.log(err);
+    // alert("Invalid Credentials");
+   })
+  fdata[ind].quantity = fdata[ind].quantity + 1;
+  console.log(fdata[ind].quantity,"bye" )
+  temp = totalamount +  fdata[ind].price.amount;
+  console.log(temp, "fuiksfj")
+  settotalamount(temp);
+  // console.log(fdata[ind].id)
+
+
 if (Quant < 99){
 SetQuant(Quant+1);}
 }
 const Decrement = (key) =>{
-  
+  var temp = 0;
   var ind = fdata.indexOf(key);
   fdata[ind].quantity = fdata[ind].quantity - 1;
   axios.put(`/api/cart/item/${fdata[ind].id}/`, {
@@ -74,7 +81,7 @@ const Decrement = (key) =>{
      console.log(err);
     // alert("Invalid Credentials");
    })
- temp =temp - fdata[ind].price.amount;
+ temp =- fdata[ind].price.amount;
  settotalamount(temp);
   if (Quant > 0){
     SetQuant(Quant-1);}
@@ -95,7 +102,6 @@ viewproducts = (fdata || []).map((key,index) => {
  </>
     )
 })
-
   return (
       <>
 

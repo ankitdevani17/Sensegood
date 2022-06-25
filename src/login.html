@@ -1,0 +1,66 @@
+<div class="container body-container">
+    <header>
+        <a href="/" id="logo" style="animation-delay: 0.2s">
+            <img src="https://account.xrite.com/img/XriteMenuLogo.png" class="xrite-logo icon-banner">
+        </a>
+    </header>
+    <main style="animation-delay: 0.5s">
+<div class="login-page">
+<div class="row">
+    <div class="mx-auto">
+        <div id="login-card" class="card has-divider card-fixed-width">
+            <div class="card-header text-center">
+                <h2>Sign In</h2>
+                    <p class="tidy-text">You'll be returned to <b>My X-Rite</b> upon logging in</p>
+                        <div id="client-logo" style="animation-delay: 0.2s">
+                            <img src="https://account.xrite.com/img/ClientLogo/My X-Rite.png" class="xrite-logo icon-banner" alt="My X-Rite">
+                        </div>
+            </div>
+            <div class="card-body">
+                <p class="tidy-text text-muted">Please log in using your X-Rite credentials.</p>
+                <form id="LoginForm" action="" method="post">
+                    <input type="hidden" id="ReturnUrl" name="ReturnUrl" value="/connect/authorize/callback?client_id=MyXrite&amp;redirect_uri=https%3A%2F%2Fmy.xrite.com%2Fsignin-oidc&amp;response_type=code&amp;scope=openid%20profile%20ums&amp;code_challenge=N-EFt6ereeHwfueM0_zt1UuoB7H2_NL4-Hc5q6BeePo&amp;code_challenge_method=S256&amp;response_mode=form_post&amp;nonce=637916693854504896.YzZhOGE4YTktNDIzYS00NzEwLWIzZGYtNTgxNjlmNDNlNGVmZjhkZDg4NTctYTJkNS00OTI3LWEyM2UtNzI5MWYwNzIwNjQw&amp;state=CfDJ8IRMXk6erJhOpmM1gEcde--ML7p1Ofh2K8FprbV1pal09i1xdc2HlsXotYgZI7lOgQit88MmPtoUNpj3FCaASO9U7_5e21pmOpBmxa66u60ICdKoNoHBjvKfGUjchVLlEn2Anc68WQLe4PBuqFAN7361PTV0UHtyaTYK5bn7K1YH_Oa5WSJJ2rnRzoDP3FYObxeR-Tj53AM7uXH7vnaOQw5WtO6suyttOid7xMVsBBB2oMuj06s1968vAm2pUCWbPEALwK4D7RfXTY94v1D66tFwGaHJvyJwRA1k2MMMvEKCiTmaiaOzbDXVFqYTak4JUQKZBtlIshfsstVc9MKq4UxucbCxoj_pXJjSOeWhcPNn2C0QyQIkqe4AlqpF6CWfGA&amp;x-client-SKU=ID_NETSTANDARD2_0&amp;x-client-ver=5.5.0.0">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" autofocus="" data-val="true" data-val-required="The Username field is required." id="Username" name="Username" value="">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Password" autocomplete="off" data-val="true" data-val-required="The Password field is required." id="Password" name="Password">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <button id="login-button" class="btn btn-primary" name="button" value="login" data-button-delay="true">Log In</button>
+                                <button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8DjcEf0zSvxEkc2_2ZsvW633APHKFunrppFvdKRO8GEC7NvpqUmR71mTQPr7ZmdwmISpJV0aWdfwRH-O8RKwTYw_5Q3YFYiS8a5ICowFRxMayT975KbXxyFQ2KUfSGIzSfc-LPqG_DjegmfGtHcvlBM"></form>
+            </div>
+            <div class="card-footer split-buttons">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 text-center">
+                            <a href="/Account/PasswordReset?refer=https://my.xrite.com">Forgotten password</a>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <a href="/Account/Register?refer=https://my.xrite.com">Register for an account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </main>
+    <footer style="animation-delay: 1s">
+        <span>© 2022 X-Rite, Incorporated. All rights reserved.</span>
+    </footer>
+    <div class="optanon-toggle-display fab" style="opacity: 0"></div>
+</div>

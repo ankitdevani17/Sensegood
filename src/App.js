@@ -12,6 +12,7 @@ import Checkout from './Components/Checkout';
 import Razorpay from './Components/Razorpay';
 import { Route,Routes } from "react-router-dom";
 import axios from 'axios';
+import AfterSignup from './Components/AfterSignup';
 const App = () => {
   axios.defaults.xsrfHeaderName = "X-CSRFToken"
   axios.defaults.xsrfCookieName = 'csrftoken'
@@ -27,6 +28,7 @@ return(
     <Route path ='/Shipping' element ={<Shipping/>}></Route>
     <Route path ='/Checkout' element ={<Checkout/>}></Route>
     <Route path ='/Razorpay' element ={<Razorpay/>}></Route>
+    <Route path ='/AfterSignup' element ={<AfterSignup/>}></Route>
   </Routes>
 
 )}
