@@ -1,84 +1,75 @@
-    /* Reset styles */
-    body {
-        margin: 0;
-        padding: 0;
-        min-width: 100%;
-        width: 100% !important;
-        height: 100% !important;
-      }
-  
-      body,
-      table,
-      td,
-      div,
-      p,
-      a {
-        -webkit-font-smoothing: antialiased;
-        text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-        line-height: 100%;
-      }
-  
-      table,
-      td {
-        mso-table-lspace: 0pt;
-        mso-table-rspace: 0pt;
-        border-collapse: collapse !important;
-        border-spacing: 0;
-      }
-  
-      img {
-        border: 0;
-        line-height: 100%;
-        outline: none;
-        text-decoration: none;
-        -ms-interpolation-mode: bicubic;
-      }
-  
-      #outlook a {
-        padding: 0;
-      }
-  
-      .ReadMsgBody {
-        width: 100%;
-      }
-  
-      .ExternalClass {
-        width: 100%;
-      }
-  
-      .ExternalClass,
-      .ExternalClass p,
-      .ExternalClass span,
-      .ExternalClass font,
-      .ExternalClass td,
-      .ExternalClass div {
-        line-height: 100%;
-      }
-  
-      @media all and (min-width: 560px) {
-        body {
-          margin-top: 30px;
-        }
-      }
-      
-      /* Rounded corners */
-      @media all and (min-width: 560px) {
-        .container {
-          border-radius: 8px;
-          -webkit-border-radius: 8px;
-          -moz-border-radius: 8px;
-          -khtml-border-radius: 8px;
-        }
-      }
-      /* Links */
-      a,
-      a:hover {
-        color: #127DB3;
-      }
-  
-      .footer a,
-      .footer a:hover {
-        color: #999999;
-      }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+  }
+  body {
+    background-color: #f2f4ff;
+  }
+  .container {
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    margin: 150px auto;
+    border-radius: 11px;
+    padding: 40px 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  /* top-header */
+  .top-header h3 {
+    text-align: center;
+    color: #495d76;
+  }
+  .top-header p {
+    color: #cecfd3;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 5px;
+  }
+  /* top-header */
+  /* form */
+  .user input,
+  .pass input {
+    width: 100%;
+    height: 25px;
+    border: none;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 40px;
+  }
+  ::placeholder {
+    color: #9ca5b4;
+    font-size: 12px;
+  }
+  .user i,
+  .pass i {
+    position: relative;
+    top: 23px;
+    right: -10px;
+    color: #3981ed;
+  }
+  /* form */
+  /* button */
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .btn button {
+    width: 100%;
+    border: none;
+    height: 35px;
+    background-color: #277ffd;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  /* button */
+  p.last {
+    text-align: center;
+    position: relative;
+    bottom: 120px;
+    font-size: 12px;
+  }

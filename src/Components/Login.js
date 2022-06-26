@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios'; 
 import {useNavigate} from "react-router-dom";
-import "./Login.css"
+import "./Login.module.css"
 
 
 const Login = () => {
@@ -74,10 +74,11 @@ const Login = () => {
         </div>
       </form>
       <div class="btn">
-        <button onClick = {handleApi}>Sign in</button>
+        <button  onClick = {handleApi}>Sign in</button>
       </div>
     </div>
-    <p class="last">Forgot your password? <a href="#"> Reset Password </a></p>
+
+    {/* <p class="last">Forgot your password? <a href="#"> Reset Password </a></p> */}
     <script src="/app.js"></script>
   </body>
 </html>

@@ -21,8 +21,8 @@ const AfterSignup = () => {
                   <table border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
-                        <h2>You are just one step away! </h2>
-                        <h2>Check your email and verify your registration</h2>
+                      <h2>Welcome to Sensegoodintruments.</h2>
+                        <h3>You are just one step away! We request you to check your email and verify your registration.</h3>
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
                             <tr>

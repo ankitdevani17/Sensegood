@@ -13,6 +13,9 @@ import Razorpay from './Components/Razorpay';
 import { Route,Routes } from "react-router-dom";
 import axios from 'axios';
 import AfterSignup from './Components/AfterSignup';
+import Contactus from './Components/Contactus';
+import Support from './Components/Support';
+import Aboutus from './Components/Aboutus';
 const App = () => {
   axios.defaults.xsrfHeaderName = "X-CSRFToken"
   axios.defaults.xsrfCookieName = 'csrftoken'
@@ -25,10 +28,13 @@ return(
     <Route  path="/Country" element ={<Country/>}></Route>
     <Route  path="/Logout" element ={<Logout/>}></Route>
     <Route path ='/Billing' element ={<Billing/>}></Route>
-    <Route path ='/Shipping' element ={<Shipping/>}></Route>
+    <Route exact path ='/Shipping' element ={<Shipping/>}></Route>
     <Route path ='/Checkout' element ={<Checkout/>}></Route>
     <Route path ='/Razorpay' element ={<Razorpay/>}></Route>
     <Route path ='/AfterSignup' element ={<AfterSignup/>}></Route>
+    <Route path ='/Contactus' element ={<Contactus/>}></Route>
+    <Route path ='/Support' element ={<Support/>}></Route>
+    <Route path ='/Aboutus' element ={<Aboutus/>}></Route>
   </Routes>
 
 )}
