@@ -4,10 +4,7 @@
     box-sizing: border-box;
     font-family: poppins;
   }
-  body {
-    background-color: #f2f4ff;
-  }
-  .container {
+  .container-sign {
     width: 400px;
     height: 300px;
     background-color: #fff;
@@ -21,7 +18,7 @@
     text-align: center;
     color: #495d76;
   }
-  .top-header p {
+  .top-header .p-sign {
     color: #cecfd3;
     font-size: 13px;
     text-align: center;

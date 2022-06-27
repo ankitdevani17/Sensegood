@@ -58,10 +58,10 @@ const Login = () => {
     />
       </head>
   <body>
-    <div class="container">
+    <div class="container-login">
       <div class="top-header">
         <h3>Welcome back</h3>
-        <p>Enter your credentials to access your account</p>
+        <p className = "p-login">Enter your credentials to access your account</p>
       </div>
       <form action="">
         <div class="user">

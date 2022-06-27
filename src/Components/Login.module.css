@@ -7,7 +7,7 @@
       body {
         background-color: #f2f4ff;
       }
-      .container {
+      .container-login {
         width: 400px;
         height: 300px;
         background-color: #fff;
@@ -21,7 +21,7 @@
         text-align: center;
         color: #495d76;
       }
-      .top-header p {
+      .top-header .p-login {
         color: #cecfd3;
         font-size: 13px;
         text-align: center;

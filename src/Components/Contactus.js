@@ -10,19 +10,19 @@ const Contactus = () => {
         <div class="contact-items">
             <div class="customer-care">
                 <h3>Customer Care</h3>
-                <p>Our Support team is spread all over the world to give you fast response</p>
+                <p className ="p-contact">Our Support team is spread all over the world to give you fast response</p>
                <button className ="button-contact" id="cust-care"> Submit a Request</button>
                 <a href="#"> Frequently asked Questions</a>
             </div>
             <div class="write-us">
                 <h3>Write Us</h3>
-                <p> You can write us if you have any queries</p>
+                <p className ="p-contact"> You can write us if you have any queries</p>
                <a href="#"><button className ="button-contact" id="write">Write</button></a>
           <a href="./contact-form.html"><button className ="button-contact" id="write">Write</button></a>  
             </div>
             <div class="sales-market">
                 <h3> Sales and Marketing</h3>
-                <p>Get in touch with our sales and marketing team</p>
+                <p className ="p-contact">Get in touch with our sales and marketing team</p>
                <button className ="button-contact" id="sales">Contact Sales</button>
                 <a href="#">View Plans</a>
 

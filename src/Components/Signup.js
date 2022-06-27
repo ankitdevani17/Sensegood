@@ -64,10 +64,10 @@ const Signup = () => {
         />
           </head>
       <body>
-        <div class="container">
+        <div class="container-sign">
           <div class="top-header">
             <h3>New user?</h3>
-            <p>Enter your details to dive in</p>
+            <p className = "p-sign">Enter your details to dive in</p>
           </div>
           <form action="">
             <div class="user">

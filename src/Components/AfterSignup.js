@@ -8,11 +8,11 @@ const AfterSignup = () => {
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Simple Transactional Email</title>
   </head>
-  <body class="">
+  <body class="asp">
     <table border="0" cellpadding="0" cellspacing="0" class="body">
       <tr>
         <td>&nbsp;</td>
-        <td class="container">
+        <td class="container-asp">
           <div class="content">
             <span class="preheader">Subscribe to Coloured.com.ng mailing list</span>
             <table class="main">
@@ -21,7 +21,7 @@ const AfterSignup = () => {
                   <table border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
-                      <h2>Welcome to Sensegoodintruments.</h2>
+                      <h2 className = "h2-asp">Welcome to Sensegoodintruments.</h2>
                         <h3>You are just one step away! We request you to check your email and verify your registration.</h3>
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>

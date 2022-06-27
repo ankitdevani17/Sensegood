@@ -16,10 +16,12 @@ import AfterSignup from './Components/AfterSignup';
 import Contactus from './Components/Contactus';
 import Support from './Components/Support';
 import Aboutus from './Components/Aboutus';
+import Footer from './Components/Footer';
 const App = () => {
   axios.defaults.xsrfHeaderName = "X-CSRFToken"
   axios.defaults.xsrfCookieName = 'csrftoken'
 return(
+  
     <Routes>
     <Route  path="/login" element ={<Login/>}/>
     <Route  path="/Signup" element ={<Signup/>}></Route>
@@ -35,6 +37,8 @@ return(
     <Route path ='/Contactus' element ={<Contactus/>}></Route>
     <Route path ='/Support' element ={<Support/>}></Route>
     <Route path ='/Aboutus' element ={<Aboutus/>}></Route>
+    <Route path ='/Footer' element ={<Footer/>}></Route>
+    
   </Routes>
 
 )}
