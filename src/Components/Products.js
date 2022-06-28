@@ -1,24 +1,40 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
-
-const Products = () => {
-  const [num,setnum ] =useState();
+import "./Aboutus.css"
+import Card from './Card';
+const Products = (props) => {
+  const [num,setnum ] =useState([]);
   useEffect(() => {
     async function getData() {
     const res = await axios.get(`http://sgtest.tk/api/products/get_list/`,
     {mode:'cors'},{ withCredentials: true });
-    const data = JSON.stringify(res.data);
-    console.log(data);
-    setnum(res.data[0].name);
+    console.log(res.data);
+    console.log(res.data[0].name);
+    setnum(res.data)
     }
     getData();
-  })
+  },[])
   return (<>
-    <div>Products</div>
-    <p>{num}</p>
-    </>
-  )
+<section className = "section-about">
+    <div className="container-about" data-aos="zoom-in">
+      <div className="section-title-about">
+        <h2>Accessories</h2>
+      </div>
+{num.map((val,index) =>{
+          return (
+            <Card
+            key={index}
+                img = {val.cover_image}
+                name = {val.name} 
+            />
+          )
+        })}
+        </div>
+  </section>
+    
+        
+            </>
+);
+
 }
-
-
 export default Products;
