@@ -3,7 +3,6 @@ import Login from "./Components/Login";
 import Signup from './Components/Signup';
 import VerifyReg from './Components/VerifyReg';
 import Products from './Components/Products';
-import Cart from './Components/Cart';
 import Country from './Components/Country';
 import Logout from './Components/Logout';
 import Billing from './Components/Billing';
@@ -17,6 +16,9 @@ import Contactus from './Components/Contactus';
 import Support from './Components/Support';
 import Aboutus from './Components/Aboutus';
 import Footer from './Components/Footer';
+import Resources from './Components/Resources';
+import ResourcesDisplay from './Components/ResourcesDisplay';
+import Cardview from './Components/Cardview';
 const App = () => {
   axios.defaults.xsrfHeaderName = "X-CSRFToken"
   axios.defaults.xsrfCookieName = 'csrftoken'
@@ -37,6 +39,9 @@ return(
     <Route path ='/Contactus' element ={<Contactus/>}></Route>
     <Route path ='/Support' element ={<Support/>}></Route>
     <Route path ='/Aboutus' element ={<Aboutus/>}></Route>
+    <Route path ='/Resources' element ={<Resources/>}></Route>
+    <Route path ='/Resources/detail/:id' element ={<ResourcesDisplay/>}></Route>
+    <Route path ='/products/detail/:id' element ={<Cardview/>}></Route>
     <Route path ='/Footer' element ={<Footer/>}></Route>
     
   </Routes>

@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-const Cards = (props) => {
+const ResourceCard = (props) => {
 const Navigate = useNavigate();
 const seemore = () =>{
-Navigate(`/products/detail/${props.id}`)
+Navigate(`/resources/detail/${props.id}`)
 console.log("workin")
 }
   return (
@@ -23,4 +23,4 @@ console.log("workin")
   );
 };
 
-export default Cards;
+export default ResourceCard;

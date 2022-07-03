@@ -1,35 +1,53 @@
 import React from 'react'
-import './Contactus.css'
+import './Aboutus.css'
 const Contactus = () => {
   return (
     <>
+      <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+      </head>
+  <body>
     <div className="container-contact">
         <h1>Contact Us</h1>
         <hr></hr>
-        <h2 className ="h2-contact">Have any questions? We'd love to hear from you</h2>
-        <div class="contact-items">
-            <div class="customer-care">
-                <h3>Customer Care</h3>
-                <p className ="p-contact">Our Support team is spread all over the world to give you fast response</p>
-               <button className ="button-contact" id="cust-care"> Submit a Request</button>
-                <a href="#"> Frequently asked Questions</a>
-            </div>
-            <div class="write-us">
-                <h3>Write Us</h3>
-                <p className ="p-contact"> You can write us if you have any queries</p>
-               <a href="#"><button className ="button-contact" id="write">Write</button></a>
-          <a href="./contact-form.html"><button className ="button-contact" id="write">Write</button></a>  
-            </div>
-            <div class="sales-market">
-                <h3> Sales and Marketing</h3>
-                <p className ="p-contact">Get in touch with our sales and marketing team</p>
-               <button className ="button-contact" id="sales">Contact Sales</button>
-                <a href="#">View Plans</a>
+        <div className="row">
+        <div class="col-md-4">
+              <div class="info-box">
+                <i class="bx bx-phone-call"></i>
+                <h3>Sensegood Instruments Private Limited</h3>
+                <p></p>Gujarat, India<p></p>
+                <p><a href="tel:+919714179358" style="color:#444444">Phone, WhatsApp, Signal, Telegram:
+<br/>+91 79 8484 8002
+</a></p>
+              </div>
 
-            </div>
+              <div class="info-box">
+                <i class="bx bx-envelope"></i>
+                <h3>Email Us</h3>
+                <p style="padding:0px 25px">For vendor/ partnerships/ inquiries, please reach out to</p>
+                <p><a href="mailto:info@sensegoodinstruments.com">info@sensegoodinstruments.com</a></p>
+                <br/><br/>
+                <p style="padding:0px 25px">For servicing/ repairing/ calibration/ post-purchase support, please reach out to</p>
+                <p><a href="mailto:support@sensegoodinstruments.com">support@sensegoodinstruments.com</a></p>
+
         </div>
-        
+        </div>
+        </div>
     </div>
+    </body>
     </>
   )
 }

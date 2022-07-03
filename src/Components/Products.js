@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
-import "./Aboutus.css"
 import Card from './Card';
 const Products = (props) => {
   const [num,setnum ] =useState([]);
@@ -20,19 +19,20 @@ const Products = (props) => {
       <div className="section-title-about">
         <h2>Accessories</h2>
       </div>
+<div className = "row">
 {num.map((val,index) =>{
           return (
             <Card
             key={index}
+            id={index}
                 img = {val.cover_image}
                 name = {val.name} 
             />
           )
         })}
         </div>
+        </div>
   </section>
-    
-        
             </>
 );
 

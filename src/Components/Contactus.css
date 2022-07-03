@@ -23,6 +23,11 @@ hr{
     align-items: center;
 
 }
+.Contact{
+height:30px;
+width:30px;
+        color: #3981ed;
+}
 .customer-care,.write-us,.sales-market{
     display: flex;
     flex-direction: column;
@@ -40,18 +45,14 @@ hr{
     box-shadow: 0 15px 15px green;
     border: 1px solid green;
 }
-.write-us{
-    height: 250px;
-    box-shadow: 0 15px 15px red;
-    border: 1px solid red;
-}
+
 .sales-market{
     height: 250px;
     box-shadow: 0 15px 15px blue;
     border: 1px solid blue;
 }
 .p-contact{
-    font-size: 15px;
+    font-size: 13px;
 }
 .button-contact{
     padding: 8px 16px;

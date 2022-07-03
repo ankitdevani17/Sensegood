@@ -3,38 +3,60 @@ import axios from 'axios';
 import { useStateIfMounted } from 'use-state-if-mounted';
 //delared globally to access amoung all functions
 const Country = () => {
-const [country,setcountry ] =useState("IN");
+const [country,setcountry ] =useState();
+const [list,setlist ] =useState([]);
 const [fdata,setdata] =useState([]);
 const [Quant,SetQuant]
  = useState(0);
+
  const [totalamount,settotalamount] = useState()
+
+ async function getCountry() {
+  const res = await axios.get(`/api/products/get_country_list`,{mode:'cors'},{ withCredentials: true }
+  );
+  //const serverdata = JSON.stringify(res);   
+  console.log(res);
+  setlist(res.data)
+    }
 useEffect(() => {
+  getCountry();
+ } ,[])
+useEffect(() => {
+ 
+  // while(country!=undefined){
+
+  // }
     async function getData() {
-    const res = await axios.get(`/api/products/get_checkout_list/${country}/`,{mode:'cors'},{ withCredentials: true }
+    const res = await axios.get(`/api/products/get_checkout_list/INDIA/`,{mode:'cors'},{ withCredentials: true }
     );
     //const serverdata = JSON.stringify(res);   
     console.log(res);
     setdata(res.data);
-    initialPrice(res.data);
+    // initialPrice(res.data);
     console.log("data set")
       }
-  let a =  getData();
+       getData();
 
-},[])
+},[country])
 
-function initialPrice (fdata) {
-console.log("kei bhi")
-var temp=0;
-for (var i = 0; i < fdata.length; i++) {
-console.log("changing temp")
- temp = temp + fdata[i].quantity * fdata[i].price.amount;
-  }
-  console.log("total amount printing")
-  settotalamount(temp);
-}
-useEffect(()=>{
-  console.log(totalamount,"use");
-},[totalamount])
+// if(fdata == undefined || list == undefined || country == undefined){
+//   return <>
+//     <h2>loading</h2>
+//   </>
+// }
+// function initialPrice (fdata) {
+// console.log("kei bhi")
+// var temp=0;
+// for (var i = 0; i < fdata.length; i++) {
+// console.log("changing temp")
+//  temp = temp + fdata[i].quantity * fdata[i].price.amount;
+//   }
+//   console.log("total amount printing")
+//   settotalamount(temp);
+// }
+// useEffect(()=>{
+//   console.log(totalamount,"use");
+// },[totalamount])
 
 const Increment = (key) =>{
   var temp = 0;
@@ -109,10 +131,19 @@ viewproducts = (fdata || []).map((key,index) => {
     <select value ={country} onChange={(event)=>{
     setcountry(event.target.value);
     }}>
-        <option value="IN">IN</option>
-        <option value="US">US</option>
-    </select>
+{list.map((val,index)=>{
+  return( 
+<>
 
+        <option value={val.country}>{val.country}</option>
+    
+</>
+
+  )
+})
+   
+}
+</select>
     {viewproducts} <br/>
     Total amount : {totalamount}
    
