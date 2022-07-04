@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useStateIfMounted } from 'use-state-if-mounted';
 //delared globally to access amoung all functions
 const Country = () => {
-const [country,setcountry ] =useState();
+const [country,setcountry ] =useState("INDIA");
 const [list,setlist ] =useState([]);
 const [fdata,setdata] =useState([]);
 const [Quant,SetQuant]
@@ -21,21 +21,24 @@ const [Quant,SetQuant]
 useEffect(() => {
   getCountry();
  } ,[])
-useEffect(() => {
- 
-  // while(country!=undefined){
 
-  // }
-    async function getData() {
-    const res = await axios.get(`/api/products/get_checkout_list/INDIA/`,{mode:'cors'},{ withCredentials: true }
-    );
-    //const serverdata = JSON.stringify(res);   
-    console.log(res);
-    setdata(res.data);
-    // initialPrice(res.data);
-    console.log("data set")
-      }
-       getData();
+ async function getData() {
+  const res = await axios.get(`/api/products/get_checkout_list/${country}/`,{mode:'cors'},{ withCredentials: true }
+  );
+  //const serverdata = JSON.stringify(res);   
+  console.log(res);
+  setdata(res.data);
+  // initialPrice(res.data);
+  console.log("data set")
+    }
+
+useEffect(() => {
+  if(fdata == undefined || list == undefined || country == undefined){
+  return <>
+    <h2>loading</h2>
+  </>
+}
+  getData();
 
 },[country])
 
