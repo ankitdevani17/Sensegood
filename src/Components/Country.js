@@ -8,11 +8,10 @@ const [list,setlist ] =useState([]);
 const [fdata,setdata] =useState([]);
 const [Quant,SetQuant]
  = useState(0);
-
  const [totalamount,settotalamount] = useState()
 
  async function getCountry() {
-  const res = await axios.get(`/api/products/get_country_list`,{mode:'cors'},{ withCredentials: true }
+  const res = await axios.get(`http://sgtest.tk/api/products/get_country_list`,{mode:'cors'},{ withCredentials: true }
   );
   //const serverdata = JSON.stringify(res);   
   console.log(res);
@@ -33,39 +32,42 @@ useEffect(() => {
     }
 
 useEffect(() => {
-  if(fdata == undefined || list == undefined || country == undefined){
+  getData();
+}
+
+,[country])
+
+useEffect(() => {
+  initialPrice(fdata);
+} ,[fdata])
+
+function initialPrice (fdata) {
+  console.log("kei bhi")
+  let temp = 0;
+  fdata.map((val,index)=>{ 
+    console.log("inside")  
+  temp = temp + val.price.amount*val.quantity
+   
+    }) 
+    console.log("total amount printing")
+    settotalamount(temp);
+  }
+
+if(fdata == undefined || list == undefined || country == undefined || totalamount == undefined){
   return <>
     <h2>loading</h2>
   </>
 }
-  getData();
 
-},[country])
-
-// if(fdata == undefined || list == undefined || country == undefined){
-//   return <>
-//     <h2>loading</h2>
-//   </>
-// }
-// function initialPrice (fdata) {
-// console.log("kei bhi")
-// var temp=0;
-// for (var i = 0; i < fdata.length; i++) {
-// console.log("changing temp")
-//  temp = temp + fdata[i].quantity * fdata[i].price.amount;
-//   }
-//   console.log("total amount printing")
-//   settotalamount(temp);
-// }
 // useEffect(()=>{
 //   console.log(totalamount,"use");
 // },[totalamount])
 
 const Increment = (key) =>{
+
   var temp = 0;
   var ind = fdata.indexOf(key);
   console.log(fdata[ind].quantity,"hi" )
-  var temp3 = fdata[ind]
   axios.put(`/api/cart/item/${fdata[ind].id}/`, {
     quantity: fdata[ind].quantity+1
  
@@ -85,17 +87,17 @@ const Increment = (key) =>{
   console.log(temp, "fuiksfj")
   settotalamount(temp);
   // console.log(fdata[ind].id)
+  }
 
 
-if (Quant < 99){
-SetQuant(Quant+1);}
-}
 const Decrement = (key) =>{
   var temp = 0;
   var ind = fdata.indexOf(key);
-  fdata[ind].quantity = fdata[ind].quantity - 1;
+  if (fdata[ind].quantity > 0){
+  console.log(fdata[ind].quantity,"hi" )
   axios.put(`/api/cart/item/${fdata[ind].id}/`, {
-    quantity: fdata[ind].quantity 
+    quantity: fdata[ind].quantity-1
+ 
    }, {mode:'cors'},{ withCredentials: true }).then(res => {
    console.log(res.data);
    //alert("success");
@@ -106,12 +108,13 @@ const Decrement = (key) =>{
      console.log(err);
     // alert("Invalid Credentials");
    })
- temp =- fdata[ind].price.amount;
- settotalamount(temp);
-  if (Quant > 0){
-    SetQuant(Quant-1);}
-}
-
+  fdata[ind].quantity = fdata[ind].quantity - 1;
+  console.log(fdata[ind].quantity,"bye" )
+  temp = totalamount -  fdata[ind].price.amount;
+  console.log(temp, "fuiksfj")
+  settotalamount(temp);
+  // console.log(fdata[ind].id)
+  }}
 var viewproducts ="";
 viewproducts = (fdata || []).map((key,index) => {
     return( 
