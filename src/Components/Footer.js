@@ -3,7 +3,7 @@ import "./Aboutus.css"
 const Footer = () => {
   return (
     <>
-    <footer id="footer">
+<footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -14,7 +14,7 @@ const Footer = () => {
               <p>
                 Gujarat, India <br/>
 
-                <strong>Phone:</strong><a href="tel:+919714179358" style="color:#ffffff"> +91 79 8484 8002</a><br/>
+                <strong>Phone:</strong><a href="tel:+919714179358" style={{"color": "#ffffff"}}> +91 79 8484 8002</a><br/>
                 <strong>Email:</strong> info@sensegoodinstruments.com<br/>
               </p>
               <div class="social-links mt-3">
@@ -30,12 +30,12 @@ const Footer = () => {
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="support">Support</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="color-education-resources">Resources</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="product-accessories">Accessories</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="aboutus">About</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact">Contact Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="support.php">Support</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="color-education-resources.php">Resources</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="product-accessories.php">Accessories</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="aboutus.php">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact Us</a></li>
             </ul>
           </div>
 
@@ -43,8 +43,8 @@ const Footer = () => {
             <h4>Our Products</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="spectrophotometer.php">Sensegood Spectrophotometer</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="software">SensegoodSmart Utility</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="space-defence-electronics">Space and Defence</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="color-measurement/software.php">SensegoodSmart Utility</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="space-defence-electronics.php">Space and Defence</a></li>
             </ul>
           </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
             <h4>Industries We Serve</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="color-measurement.php#features">Color Management </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="space-defence-electronics">Space, Defence, Telecom, Industry 4.0</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="space-defence-electronics.php">Space, Defence, Telecom, Industry 4.0</a></li>
             </ul>
 
           </div>
@@ -67,9 +67,6 @@ const Footer = () => {
       </div>
     </div>
   </footer>
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-<div id="torrent-scanner-popup" style="display: none;"></div>
     </>
   )
 }

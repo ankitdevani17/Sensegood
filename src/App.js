@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
 import Login from "./Components/Login";
 import Signup from './Components/Signup';
 import VerifyReg from './Components/VerifyReg';
@@ -19,13 +21,18 @@ import Footer from './Components/Footer';
 import Resources from './Components/Resources';
 import ResourcesDisplay from './Components/ResourcesDisplay';
 import Cardview from './Components/Cardview';
+import Industry from './Components/Industry';
+import IndustryDisplay from './Components/IndustryDisplay';
 const App = () => {
   axios.defaults.xsrfHeaderName = "X-CSRFToken"
   axios.defaults.xsrfCookieName = 'csrftoken'
 return(
-  
+  <>
+
     <Routes>
+    <Route exact path="/" element={<Home />} />
     <Route  path="/login" element ={<Login/>}/>
+    <Route  path="/navbar" element ={<Navbar/>}/>
     <Route  path="/Signup" element ={<Signup/>}></Route>
     <Route  path="/VerifyReg" element ={<VerifyReg/>}></Route>
     <Route  exact path="/Products" element ={<Products/>}></Route>
@@ -42,10 +49,11 @@ return(
     <Route path ='/Resources' element ={<Resources/>}></Route>
     <Route path ='/Resources/detail/:id' element ={<ResourcesDisplay/>}></Route>
     <Route path ='/products/detail/:id' element ={<Cardview/>}></Route>
+    <Route path ='/industry' element ={<Industry/>}></Route>
     <Route path ='/Footer' element ={<Footer/>}></Route>
-    
+    <Route exact path ='/:id' element ={<IndustryDisplay/>}></Route>
   </Routes>
-
+</>
 )}
 
 export default App

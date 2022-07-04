@@ -1,0 +1,21 @@
+.country{
+    margin-top:30px   
+}
+.h2-country{
+    text-align:center;
+}
+.h4-country{
+    text-align:center;
+}
+.button-country{
+ /* Green */
+
+    color: black;
+    padding: 3px 3px;
+    display: inline-block;
+    font-size: 20px;
+}
+.icon-country{
+    font-size: 20px;
+
+}

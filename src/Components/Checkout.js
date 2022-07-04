@@ -12,10 +12,7 @@ document.body.innerHTML+=html;
     {mode:'cors'},{ withCredentials: true });
     //const data = JSON.stringify(res.data);
     //let newdata = JSON.parse(data);
-    console.log(res.data.razorpay);
-    setprice(res.data.total_amount.amount);
     console.log(res.data)
-    sethtml(res.data.invoice);
 
     }
   // a.then(()=>{
@@ -25,9 +22,9 @@ document.body.innerHTML+=html;
   useEffect(() => {
     getData();
   }, [])
-  useEffect(() => {
-    invoice();
-  },[html])
+  // useEffect(() => {
+  //   invoice();
+  // },[html])
   
   return (<>
     <div>Checkout</div>
