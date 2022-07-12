@@ -7,14 +7,22 @@ const ResourcesDisplay = () => {
 const {id}= useParams();
 const digit = parseInt(id)+1
 const [fdata,setdata] =useState([]);
-const [faq,setfaq] =useState();
 
+const [faq,setfaq] =useState();
+const [html,sethtml ] =useState('');
+const invoice = () =>{
+  console.log(html)
+  document.getElementsByClassName("write-up").innerHTML = html;
+// document.body.innerHTML+=html;
+
+} 
     async function getData() {
     const res = await axios.get(`http://sgtest.tk/api/resources/detail/${digit}`,
     {mode:'cors'},{ withCredentials: true });
     console.log(res.data);
     setdata(res.data)
     setfaq(res.data.faqs)
+    sethtml(res.data.writeup);
     }
     useEffect(() => { 
     getData();
@@ -23,7 +31,7 @@ const [faq,setfaq] =useState();
   if (fdata==undefined || faq == undefined) {
     return (
       <div>
-        <h1></h1>
+        <h1>BLANK SA</h1>
       </div>
     );
 
@@ -67,6 +75,10 @@ const data ={
       <h2>Description</h2>
       {fdata.description}
 <br/><br/>
+
+<div className='write-up' dangerouslySetInnerHTML={{__html: html}}>
+{/* {invoice()} */}
+</div>
 <h2>FAQS</h2>
       <div>
             <Faq
@@ -77,6 +89,8 @@ const data ={
         </div>
 <br/>
 <br/>
+writeup section
+
 <h1>{fdata.name} related Downloads</h1>
 <div className = "row">
         {fdata.pdfs.map((val,index)=>{ 

@@ -23,6 +23,7 @@ import ResourcesDisplay from './Components/ResourcesDisplay';
 import Cardview from './Components/Cardview';
 import Industry from './Components/Industry';
 import IndustryDisplay from './Components/IndustryDisplay';
+import SupportCardview from './Components/SupportCardview';
 const App = () => {
   axios.defaults.xsrfHeaderName = "X-CSRFToken"
   axios.defaults.xsrfCookieName = 'csrftoken'
@@ -45,6 +46,7 @@ return(
     <Route path ='/AfterSignup' element ={<AfterSignup/>}></Route>
     <Route path ='/Contactus' element ={<Contactus/>}></Route>
     <Route path ='/Support' element ={<Support/>}></Route>
+    <Route path ='/Support/product/:id' element ={<SupportCardview/>}></Route>
     <Route path ='/Aboutus' element ={<Aboutus/>}></Route>
     <Route path ='/Resources' element ={<Resources/>}></Route>
     <Route path ='/Resources/detail/:id' element ={<ResourcesDisplay/>}></Route>
