@@ -2,8 +2,8 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios'; 
 import {Navigate, useNavigate} from "react-router-dom";
 const Industry = () => {
+const Navigate = useNavigate();
     const [fdata,setdata] =useState();
-    const [industry,setindustry ] =useState("");
     // const selectindustry = () =>{
     //     setindustry(industry);
     //     Navigate(`industry/details/${industry}`)
@@ -17,8 +17,9 @@ const Industry = () => {
         }
     useEffect(() => {
       getData();
+      console.log("called")
     },[])
-if (fdata == undefined || industry == undefined){
+if (fdata == undefined){
     return <>
     <h2>loading</h2>
   </>
@@ -26,12 +27,9 @@ if (fdata == undefined || industry == undefined){
   return (
    <>
    <select onChange = {(event)=>{
-    setindustry(event.target.value);
-    
-    Navigate(`/industry/id`)
-    console.log(event.target.value);
+    Navigate(`/industry/${event.target.value}`)
+   
    }} >
-  <option value=""> </option>
 {(fdata || []).map((val,index)=>{
   return( 
 <>
@@ -43,6 +41,7 @@ if (fdata == undefined || industry == undefined){
    
 }
 </select>
+
    </>
   )
 }

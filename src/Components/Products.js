@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
 import Card from './Card';
+import Navbar from './Navbar';
 const Products = (props) => {
   const [num,setnum ] =useState([]);
   useEffect(() => {
@@ -14,6 +15,7 @@ const Products = (props) => {
     getData();
   },[])
   return (<>
+  <Navbar/>
 <section className = "section-about">
     <div className="container-about" data-aos="zoom-in">
       <div className="section-title-about">

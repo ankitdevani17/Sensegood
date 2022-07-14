@@ -53,7 +53,7 @@ return(
     <Route path ='/products/detail/:id' element ={<Cardview/>}></Route>
     <Route path ='/industry' element ={<Industry/>}></Route>
     <Route path ='/Footer' element ={<Footer/>}></Route>
-    <Route exact path ='/:id' element ={<IndustryDisplay/>}></Route>
+    <Route exact path ='/industry/:id' element ={<IndustryDisplay/>}></Route>
   </Routes>
 </>
 )}
