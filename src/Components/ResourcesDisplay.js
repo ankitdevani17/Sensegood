@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
 import { useParams } from 'react-router-dom'
 import "./Support.css"
+import RelatedProducts from './RelatedProducts.js';
 import Faq from "react-faq-component";
 const ResourcesDisplay = () => {
 const {id}= useParams();
@@ -73,9 +74,11 @@ const data ={
           </div>
         </div>
 
+{/* End of Description Section */}
 <div className='container' dangerouslySetInnerHTML={{__html: html}}>
 {/* {invoice()} */}
 </div>
+{/* End of Writeup Section */}
 
 <section id="about">
       <div class="section-title">
@@ -106,6 +109,26 @@ const data ={
 <a download="" href={val.pdf}>{val.name}</a></h3></div></div> </>)})}
 </div>   
 </div>
+
+{/* End of pdf section */}
+
+<section id="about">
+<div class="section-title">
+            <h2>{fdata.name}  related products</h2>
+        </div>
+<div className = "row">
+{fdata.related_products.map((val,index) =>{
+          return (
+            <RelatedProducts
+            key={index}
+            id={index}
+                img = {val.cover_image}
+                name = {val.name} 
+            />
+          )
+        })}
+</div>
+</section>
 </section>
   </>
   )

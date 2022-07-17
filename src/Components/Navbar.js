@@ -19,14 +19,10 @@ const Navbar = () => {
 
 <ul class="navbar-nav ml-auto">
 
-
-
-
-
 <NavLink className="nav-link active" to="/Products">Products</NavLink>
-<li class="nav-item">
+{/* <li class="nav-item">
 <NavLink className="nav-link active" to="/Solutions">Solutions</NavLink>
-</li>
+</li> */}
 <li class="nav-item"> <NavLink className="nav-link active" to="/Support">Support</NavLink></li>
 <li class="nav-item"> <NavLink className="nav-link active" to="/Resources">Resources</NavLink> </li>
 <li class="nav-item"> <NavLink className="nav-link active" to="/aboutus">About</NavLink></li><li class="nav-item"><a class="nav-link active" href="https://sensegoodinstruments.blogspot.com/" target="_blank"> Blog </a></li>

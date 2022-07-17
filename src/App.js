@@ -11,6 +11,7 @@ import Billing from './Components/Billing';
 import Shipping from './Components/Shipping';
 import Checkout from './Components/Checkout';
 import Razorpay from './Components/Razorpay';
+import RelatedProducts from './Components/RelatedProducts';
 import { Route,Routes } from "react-router-dom";
 import axios from 'axios';
 import AfterSignup from './Components/AfterSignup';
@@ -53,6 +54,7 @@ return(
     <Route path ='/products/detail/:id' element ={<Cardview/>}></Route>
     <Route path ='/industry' element ={<Industry/>}></Route>
     <Route path ='/Footer' element ={<Footer/>}></Route>
+    <Route path ='/RelatedProducts' element ={<RelatedProducts/>}></Route>
     <Route exact path ='/industry/:id' element ={<IndustryDisplay/>}></Route>
   </Routes>
 </>

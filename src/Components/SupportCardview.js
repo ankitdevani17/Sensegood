@@ -8,6 +8,7 @@ const SupportCardview = () => {
         const digit = parseInt(id)+1
         const [fdata,setdata] =useState([]);
         const [html,sethtml ] =useState('');
+        const [faq,setfaq] =useState();
         const[pdf,setpdf] = useState([])
         const [media,setmedia] = useState([])
         async function getData() {
@@ -20,42 +21,43 @@ const SupportCardview = () => {
           setmedia(res.data.videos)
         //  setmedia(res.data.product_media)
           sethtml(res.data.writeup);
+          setfaq(res.data.faq)
           }
         useEffect(() => { 
             getData();
 
           },[])
-        //   const styles = {
-        //     bgColor: "#f2f4ff",
-        //     titleTextColor: "blue",
-        //     rowTitleColor: "blue",
-        //     // rowContentColor: 'grey',
-        //     // arrowColor: "red",
-        // };
-        
-        // const config = {
-        //   // arrowIcon: "V",
-        //   // openOnload: 0,
-        //   // expandIcon: "+",
-        //   // collapseIcon: "-"
-        // };
-        
-        // const data ={
-        //   rows:[
-
-        //     {
-        //       title:fdata.faq[0].question,
-        //       content : fdata.faq[0].answer
-        //     }
-        //   ]
-        // }
-          if (fdata==undefined || pdf == undefined || media == undefined || html == undefined) {
+          
+          if (fdata==undefined || pdf == undefined || media == undefined || html == undefined || faq == undefined) {
             return (
               <div>
                 <h1>Loading...</h1>
               </div>
             );}
+const styles = {
+            bgColor: "#f2f4ff",
+            titleTextColor: "blue",
+            rowTitleColor: "blue",
+            // rowContentColor: 'grey',
+            // arrowColor: "red",
+        };
+        
+        const config = {
+          // arrowIcon: "V",
+          // openOnload: 0,
+          // expandIcon: "+",
+          // collapseIcon: "-"
+        };
+        
+        const data ={
+          rows:[
 
+            {
+              title:faq[0].question,
+              content :faq[0].answer
+            }
+          ]
+        }
   return (
     <>  
     
@@ -104,7 +106,7 @@ const SupportCardview = () => {
       {/* end of video gallery section */}
 
 
-      {/* <section id="about">
+      <section id="about">
       <div class="section-title">
             <h2>Frequently Asked Questions</h2>
         </div>
@@ -115,7 +117,7 @@ const SupportCardview = () => {
                 config={config}
             />
         </div>
-      </section>     */}
+      </section>    
       </>
   
 
