@@ -19,7 +19,7 @@ const Products = (props) => {
 <section className = "section-about">
     <div className="container-about" data-aos="zoom-in">
       <div className="section-title-about">
-        <h2>Accessories</h2>
+        <h2>Products</h2>
       </div>
 <div className = "row">
 {num.map((val,index) =>{

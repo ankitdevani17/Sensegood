@@ -12,6 +12,25 @@ a:hover{color:#0056b3;text-decoration:underline;}
 img{vertical-align:middle;border-style:none;}
 h2{margin-bottom:.5rem;font-weight:500;line-height:1.2;}
 h2{font-size:2rem;}
+.h2-support{
+    text-align: center;
+
+}
+h2{}
+[class^=icofont-]{font-family:IcoFont!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;white-space:nowrap;word-wrap:normal;direction:ltr;line-height:1;-webkit-font-feature-settings:"liga";-webkit-font-smoothing:antialiased;}
+.icofont-download:before{content:"\ef08";}
+/*! CSS Used from: https://sensegoodinstruments.com/assets/css/style.css */
+a{color:#5596CB;}
+a:hover{color:#1a71b8;text-decoration:none;}
+h3{font-family:"Raleway", sans-serif;}
+.features .icon-box{display:flex;align-items:center;padding:20px;background:#f6f6f6;transition:ease-in-out 0.3s;}
+.features .icon-box i{font-size:32px;padding-right:10px;line-height:1;}
+.features .icon-box h3{font-weight:700;margin:0;padding:0;line-height:1;font-size:16px;}
+.features .icon-box h3 a{transition:ease-in-out 0.3s;}
+.features .icon-box h3 a:hover{color:#3498db;}
+.features .icon-box:hover{background:#eef7fc;}
+/*! CSS Used fontfaces */
+@font-face{font-family:IcoFont;font-weight:400;font-style:Regular;src:url("../images/icofont.woff2") format("woff2"),url("../images/icofont.woff") format("woff");}
 .img-fluid{max-width:100%;height:auto;}
 .container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;}
 @media (min-width:576px){
@@ -59,7 +78,7 @@ a:hover{color:#1a71b8;text-decoration:none;}
 h2{font-family:"Raleway", sans-serif;}
 section{padding:60px 0;}
 .section-title{text-align:center;padding-bottom:30px;}
-.section-title h2{font-size:32px;font-weight:bold;text-transform:uppercase;position:relative;color:#222222;}
+.section-title h2{font-size:32px;font-weight:bold;text-transform:uppercase;position:relative;}
 .section-title h2::before,.section-title h2::after{content:'';width:50px;height:2px;background:#3498db;display:inline-block;}
 .section-title h2::before{margin:0 15px 10px 0;}
 .section-title h2::after{margin:0 0 10px 15px;}
@@ -74,7 +93,7 @@ section{padding:60px 0;}
 .about .play-btn:hover::before{content:'';position:absolute;left:50%;top:50%;transform:translateX(-40%) translateY(-50%);width:0;height:0;border:none;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:15px solid #fff;z-index:200;-webkit-animation:none;animation:none;border-radius:0;}
 .get-started-btn{margin-left:25px;background:#5596CB;color:#fff;border-radius:4px;padding:8px 30px 9px 30px;white-space:nowrap;transition:0.3s;font-size:14px;display:inline-block;}
 .get-started-btn:hover{background:#1a71b8;color:#fff;}
-h2{color:black;}
+
 /*! CSS Used keyframes */
 @-webkit-keyframes pulsate-btn{0%{transform:scale(0.6, 0.6);opacity:1;}100%{transform:scale(1, 1);opacity:0;}}
 @keyframes pulsate-btn{0%{transform:scale(0.6, 0.6);opacity:1;}100%{transform:scale(1, 1);opacity:0;}}
