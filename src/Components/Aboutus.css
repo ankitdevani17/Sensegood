@@ -147,6 +147,14 @@ a:hover{color:#1a71b8;text-decoration:none;}
 @media (max-width: 992px){
 .section-title-about .h2-about::before,.section-title-about .h2-about::after{display:none;}
 }
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
 .h2-about{color:black;}
 #footer{background:#000612;padding:0 0 30px 0;color:#fff;font-size:14px;}
 #footer .footer-top{background:#00153A;padding:60px 0 30px 0;}
